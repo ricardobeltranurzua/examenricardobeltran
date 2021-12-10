@@ -1,0 +1,27 @@
+<%= form_with(model: apartament) do |form| %>
+  <% if apartament.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(apartament.errors.count, "error") %> prohibited this apartament from being saved:</h2>
+
+      <ul>
+        <% apartament.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :numero %>
+    <%= form.number_field :number %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Edificio_id %>
+        <%= form.select :building_id, @buildings.map {|building| [building.name, building.id]}, prompt: "Seleccione un edificio" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "Guardar" %>
+  </div>
+<% end %>
