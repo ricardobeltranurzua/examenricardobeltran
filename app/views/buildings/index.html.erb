@@ -18,9 +18,9 @@
         <td><%= building.name %></td>
         <td><%= building.address %></td>
         <td><%= building.city %></td>
-        <td><%= link_to 'Ver', building %></td>
-        <td><%= link_to 'Editar', edit_building_path(building) %></td>
-        <td><%= link_to 'Eliminar', building, method: :delete, data: { confirm: 'Esta seguro?' } %></td>
+        <td><%= link_to 'Ver', building, class: "btn btn-primary" %></td>
+        <td><%= link_to 'Editar', edit_building_path(building), class: "btn btn-secondary" %></td>
+        <td><%= link_to 'Eliminar', building, method: :delete, data: { confirm: 'Esta seguro?' }, class: "btn btn-danger" %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +28,4 @@
 
 <br>
 
-<%= link_to 'Nuevo Edificio', new_building_path %>
+<%= link_to 'Nuevo Edificio', new_building_path, class: "btn btn-primary" %>
